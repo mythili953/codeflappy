@@ -1,7 +1,7 @@
 var ctx = myCanvas.getContext('2d');
 var FPS = 40;
-var jump_amount = -4;
-var max_fall_speed = +4;
+var jump_amount = -8;
+var max_fall_speed = +8;
 var acceleration = 1;
 var pipe_speed = -3;
 var game_mode = 'prestart';
@@ -66,6 +66,7 @@ function Got_Player_Input(MyEvent) {
   }
   MyEvent.preventDefault();
 }
+addEventListener('touchstart', Got_Player_Input);t 
 addEventListener('mousedown', Got_Player_Input);
 addEventListener('keydown', Got_Player_Input);
 function make_bird_slow_and_fall() {
