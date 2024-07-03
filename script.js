@@ -8,7 +8,23 @@ var game_mode = 'prestart';
 var time_game_last_running;
 var bottom_bar_offset = 0;
 var pipes = [];
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    var jump_amount = -5;
+    var max_fall_speed = +5;
+  }
+}
 
+// Create a MediaQueryList object
+var x = window.matchMedia("(max-width: 660px)")
+
+// Call listener function at run time
+myFunction(x);
+
+// Attach listener function on state changes
+x.addEventListener("change", function() {
+  myFunction(x);
+});
 function MySprite(img_url) {
   this.x = 0;
   this.y = 0;
@@ -66,7 +82,7 @@ function Got_Player_Input(MyEvent) {
   }
   MyEvent.preventDefault();
 }
-addEventListener('touchstart', Got_Player_Input);t 
+addEventListener('touchstart', Got_Player_Input);
 addEventListener('mousedown', Got_Player_Input);
 addEventListener('keydown', Got_Player_Input);
 function make_bird_slow_and_fall() {
