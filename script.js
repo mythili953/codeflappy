@@ -1,30 +1,14 @@
 var ctx = myCanvas.getContext('2d');
 var FPS = 40;
-var jump_amount = -8;
-var max_fall_speed = +8;
+var jump_amount = -4;
+var max_fall_speed = +4;
 var acceleration = 1;
 var pipe_speed = -3;
 var game_mode = 'prestart';
 var time_game_last_running;
 var bottom_bar_offset = 0;
 var pipes = [];
-function myFunction(x) {
-  if (x.matches) { // If media query matches
-    var jump_amount = -5;
-    var max_fall_speed = +5;
-  }
-}
 
-// Create a MediaQueryList object
-var x = window.matchMedia("(max-width: 660px)")
-
-// Call listener function at run time
-myFunction(x);
-
-// Attach listener function on state changes
-x.addEventListener("change", function() {
-  myFunction(x);
-});
 function MySprite(img_url) {
   this.x = 0;
   this.y = 0;
