@@ -66,7 +66,6 @@ function Got_Player_Input(MyEvent) {
   }
   MyEvent.preventDefault();
 }
-addEventListener('touchstart', Got_Player_Input);
 addEventListener('mousedown', Got_Player_Input);
 addEventListener('keydown', Got_Player_Input);
 function make_bird_slow_and_fall() {
