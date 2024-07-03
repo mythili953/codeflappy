@@ -1,14 +1,30 @@
 var ctx = myCanvas.getContext('2d');
 var FPS = 40;
-var jump_amount = -7;
-var max_fall_speed = +7;
+var jump_amount = -8;
+var max_fall_speed = +8;
 var acceleration = 1;
 var pipe_speed = -3;
 var game_mode = 'prestart';
 var time_game_last_running;
 var bottom_bar_offset = 0;
 var pipes = [];
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    var jump_amount = -5;
+    var max_fall_speed = +5;
+  }
+}
 
+// Create a MediaQueryList object
+var x = window.matchMedia("(max-width: 660px)")
+
+// Call listener function at run time
+myFunction(x);
+
+// Attach listener function on state changes
+x.addEventListener("change", function() {
+  myFunction(x);
+});
 function MySprite(img_url) {
   this.x = 0;
   this.y = 0;
@@ -158,12 +174,12 @@ function add_all_my_pipes() {
   add_pipe(1600, 100, 120);
   add_pipe(1800, 150, 120);
   add_pipe(2000, 175, 120);
-  add_pipe(2200, 250, 120);
-  add_pipe(2400, 30, 100);
-  add_pipe(2700, 300, 100);
+  add_pipe(2200, 200, 120);
+  add_pipe(2400, 50, 140);
+  add_pipe(2700, 210, 100);
   add_pipe(3000, 100, 80);
-  add_pipe(3300, 250, 80);
-  add_pipe(3600, 50, 60);
+  add_pipe(3300, 170, 80);
+  add_pipe(3600, 70, 60);
   add_pipe(3800, 100, 140);
   add_pipe(4000, 50, 140);
   add_pipe(4200, 150, 140);
@@ -172,7 +188,7 @@ function add_all_my_pipes() {
   add_pipe(5000, 150, 120);
   add_pipe(5200, 175, 120);
   add_pipe(5400, 250, 120);
-  add_pipe(5600, 30, 100);
+  add_pipe(5600, 70, 100);
   var finish_line = new MySprite('http://s2js.com/img/etc/flappyend.png');
   finish_line.x =3900;
   finish_line.velocity_x = pipe_speed;
