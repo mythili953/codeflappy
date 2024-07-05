@@ -40,7 +40,7 @@ function MySprite(img_url) {
 MySprite.prototype.Do_Frame_Things = function () {
   ctx.save();
   ctx.translate(this.x + this.MyImg.width / 2, this.y + this.MyImg.height / 2);
-  ctx.rotate((this.angle * Math.PI) / 180);
+  ctx.rotate((this.angle * Math.PI) /300);
   if (this.flipV) ctx.scale(1, -1);
   if (this.flipH) ctx.scale(-1, 1);
   if (this.visible)
